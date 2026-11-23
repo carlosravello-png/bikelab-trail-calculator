@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+          \ .-~~~-.                steering axis · θ
+         .' \         '.
+        /    \          \
+       |      \          |
+       |       \•        |  ┬   • axle · offset ⟂ axis
+       |        \        |  │
+        \        \      /   R   wheel radius
+         '.       \   .'    │
+             '-._.-\'       │
+____________________\_______┴_______  ground →
+                ▲   ▲
+                └─T─┘   T = (R·cos θ − offset) / sin θ
+
+┌──────┬─────────────────────────────────────────┐
+│ CERJ │ BIKELAB TRAIL CALCULATOR      REV 1.0.0 │
+│      │ ORCID 0009-0007-5631-7436     2026      │
+└──────┴─────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BikeLab Trail Calculator — live demo of the verified engine</title>
+<meta name="description" content="Live demo of the BikeLab Trail Calculator engine: ground trail, mechanical trail, wheel flop and dynamic trail, with an in-page self-test against golden vectors.">
+<link rel="canonical" href="https://carlosravello-png.github.io/bikelab-trail-calculator/">
+<style>
+  :root { --bg:#050505; --fg:#d8d8d8; --muted:#8a8a8a; --accent:#4fb8c8; --hi:#e8ff00; --line:#1c1c1c; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.6 Inter, system-ui, sans-serif; }
+  main { max-width:860px; margin:0 auto; padding:40px 20px 60px; }
+  h1 { font:600 1.5rem 'IBM Plex Mono', ui-monospace, monospace; margin:0 0 6px; letter-spacing:.02em; }
+  .sub { color:var(--muted); margin:0 0 28px; }
+  .mono { font-family:'IBM Plex Mono', ui-monospace, monospace; }
+  .badge { display:inline-flex; gap:8px; align-items:center; font:12px 'IBM Plex Mono', monospace; border:1px solid var(--accent); color:var(--accent); padding:4px 10px; }
+  .badge.bad { border-color:#ff5b5b; color:#ff5b5b; }
+  .dot { width:7px; height:7px; border-radius:50%; background:currentColor; }
+  figure { margin:24px 0; border:1px solid var(--line); }
+  figure img { display:block; width:100%; height:auto; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin:24px 0; }
+  .card { border:1px solid var(--line); padding:16px; }
+  .card h2 { font:600 .8rem 'IBM Plex Mono', monospace; letter-spacing:.12em; color:var(--muted); margin:0 0 12px; text-transform:uppercase; }
+  label { display:flex; justify-content:space-between; gap:12px; margin:8px 0; font-size:.9rem; }
+  input { width:110px; background:#0d0d0d; color:var(--fg); border:1px solid #2a2a2a; padding:4px 8px; font:inherit; font-family:'IBM Plex Mono', monospace; }
+  .out { display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; margin:6px 0; }
+  .out b { color:var(--hi); font-weight:500; }
+  .note { color:var(--muted); font-size:.85rem; }
+  a { color:var(--accent); }
+  footer { margin-top:40px; border-top:1px solid var(--line); padding-top:16px; color:var(--muted); font-size:.82rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>BikeLab Trail Calculator</h1>
+  <p class="sub">Live demo of the calculation engine, running the same code as the published calculator.</p>
+  <span id="selftest" class="badge"><span class="dot"></span>running self-test…</span>
+
+  <figure><img src="docs/trail-geometry.svg" alt="Bicycle steering geometry: head angle, fork offset, wheel radius and trail, drawn to scale for the reference case."></figure>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Geometry</h2>
+      <label>Head angle θ (deg) <input id="ha" type="number" value="64" step="0.1" min="40" max="85"></label>
+      <label>Fork offset (mm) <input id="off" type="number" value="44" step="1" min="0" max="70"></label>
+      <label>Wheel radius R (mm) <input id="r" type="number" value="370" step="0.5" min="250" max="420"></label>
+    </section>
+    <section class="card">
+      <h2>Result</h2>
+      <div class="out"><span>Ground trail</span><b id="tg">–</b></div>
+      <div class="out"><span>Mechanical trail</span><b id="tm">–</b></div>
+      <div class="out"><span>Wheel flop</span><b id="fl">–</b></div>
+      <div class="out"><span>+1° slacker</span><b id="sha">–</b></div>
+      <div class="out"><span>+10 mm diameter</span><b id="sdia">–</b></div>
+    </section>
+    <section class="card">
+      <h2>Front compression</h2>
+      <label>Fork travel (mm) <input id="ft" type="number" value="160" step="5"></label>
+      <label>Sag (%) <input id="fs" type="number" value="30" step="1"></label>
+      <label>Wheelbase (mm) <input id="wb" type="number" value="1250" step="5"></label>
+      <div class="out"><span>Dynamic θ</span><b id="had">–</b></div>
+      <div class="out"><span>Dynamic trail</span><b id="tgd">–</b></div>
+    </section>
+  </div>
+
+  <p class="note">Values in mm. Head angle measured from the horizontal. Front compression models braking or a G-out with the rear held fixed: the head angle steepens and trail drops.</p>
+  <p class="note">Full calculator with radius from tire size, balanced sag and riding-feel guide: <a href="https://www.bikelabstudio.com/articles/trail-calculator-en.html">bikelabstudio.com</a> · Method and validation: <a href="https://www.bikelabstudio.com/articles/trail-model-validation-en.html">derivation and checks</a>.</p>
+
+  <footer class="mono">CERJ · Carlos Eduardo Ravello Joo · ORCID <a href="https://orcid.org/0009-0007-5631-7436">0009-0007-5631-7436</a> · BikeLab Studio, Trujillo, Peru · engine, vectors and verifiers under CC BY 4.0</footer>
+</main>
+<script src="trail_engine.js"></script>
+<script>
+  const el = id => document.getElementById(id);
+  const ok = selfTestCore();
+  const b = el('selftest');
+  b.className = ok ? 'badge' : 'badge bad';
+  b.innerHTML = '<span class="dot"></span>' + (ok ? 'SELF-TEST PASSED · 4/4 golden vectors + sign guard' : 'SELF-TEST FAILED');
+  function compute() {
+    const HA = +el('ha').value, o = +el('off').value, R = +el('r').value;
+    const tg = trailGround(R, o, HA);
+    el('tg').textContent = tg.toFixed(1) + ' mm';
+    el('tm').textContent = trailMech(R, o, HA).toFixed(1) + ' mm';
+    el('fl').textContent = wheelFlop(R, o, HA).toFixed(1) + ' mm';
+    el('sha').textContent = '+' + (-dT_dHA(R, o, HA)).toFixed(2) + ' mm';
+    el('sdia').textContent = '+' + (dT_dDia(HA) * 10).toFixed(1) + ' mm';
+    const had = HA_front(+el('ft').value, (+el('fs').value) / 100, HA, +el('wb').value);
+    el('had').textContent = had.toFixed(2) + '°';
+    el('tgd').textContent = trailGround(R, o, had).toFixed(1) + ' mm';
+  }
+  ['ha','off','r','ft','fs','wb'].forEach(id => el(id).addEventListener('input', compute));
+  compute();
+  console.log('%cCERJ · BikeLab Trail Calculator 1.0.0 · ORCID 0009-0007-5631-7436', 'color:#4fb8c8;font-family:monospace');
+</script>
+</body>
+</html>

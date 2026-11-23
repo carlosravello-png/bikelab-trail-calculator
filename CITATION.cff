@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "BikeLab Trail Calculator"
+version: "1.0.0"
+date-released: "2026-11-23"
+license: CC-BY-4.0
+url: "https://www.bikelabstudio.com/articles/trail-calculator-en.html"
+authors:
+  - family-names: "Ravello Joo"
+    given-names: "Carlos Eduardo"
+    orcid: "https://orcid.org/0009-0007-5631-7436"
+    affiliation: "BikeLab Studio"
+keywords:
+  - bicycle
+  - steering geometry
+  - trail
+  - wheel flop
+  - head angle
+  - fork offset

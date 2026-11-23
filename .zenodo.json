@@ -1,0 +1,22 @@
+{
+  "upload_type": "software",
+  "title": "BikeLab Trail Calculator: Bicycle Steering Geometry (Trail, Wheel Flop and Dynamic Trail) — Engine, Golden Vectors and Verifiers",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "Ravello Joo, Carlos Eduardo",
+      "orcid": "0009-0007-5631-7436",
+      "affiliation": "BikeLab Studio"
+    }
+  ],
+  "description": "<p>Calculation engine of the BikeLab Trail Calculator (online since 22 June 2026 at bikelabstudio.com, in Spanish, English and Portuguese), copied byte for byte from the live page, with its golden vectors and two verifiers: an independent Python verifier written from the published closed-form equations, and a Node.js check that runs the real engine against the golden vectors, a 4,464-input grid and the page's own self-test. The model computes ground trail, mechanical trail, wheel flop, the sensitivity of trail to head angle, offset and wheel size, and the dynamic change of trail under fork compression and balanced sag, with a permanent sign guard.</p><p>The original 2026 oracle script was not preserved; the verifier was written on 2026-11-23 to replace it and is declared as such. Writing it caught one error in the method article (+10 mm of wheel diameter gives +2.4 mm of trail, not +4.9 mm), corrected in all three languages on 2026-11-23.</p>",
+  "license": "cc-by-4.0",
+  "keywords": ["bicycle", "steering geometry", "trail", "wheel flop", "head angle", "fork offset", "mountain bike", "verification", "golden vectors"],
+  "related_identifiers": [
+    {"identifier": "https://www.bikelabstudio.com/articles/trail-calculator-en.html", "relation": "isSupplementTo", "resource_type": "software"},
+    {"identifier": "https://www.bikelabstudio.com/articles/calculadora-trail-geometria-es.html", "relation": "isSupplementTo", "resource_type": "software"},
+    {"identifier": "https://www.bikelabstudio.com/articles/calculadora-trail-geometria-pt.html", "relation": "isSupplementTo", "resource_type": "software"},
+    {"identifier": "https://www.bikelabstudio.com/articles/trail-model-validation-en.html", "relation": "isDocumentedBy", "resource_type": "publication-technicalnote"}
+  ],
+  "language": "eng"
+}

@@ -1,0 +1,30 @@
+{
+  "description": "Golden vectors of the BikeLab Trail Calculator, copied from the GOLDEN constant of the live page (2026-11-23). Ground trail in mm, head angle theta in degrees from the horizontal.",
+  "tolerance_mm": 0.02,
+  "ground_trail": [
+    {
+      "R": 370,
+      "offset": 44,
+      "theta": 64,
+      "trail_mm": 131.507
+    },
+    {
+      "R": 365,
+      "offset": 44,
+      "theta": 66,
+      "trail_mm": 114.344
+    },
+    {
+      "R": 360,
+      "offset": 51,
+      "theta": 71,
+      "trail_mm": 70.019
+    },
+    {
+      "R": 370,
+      "offset": 44,
+      "theta": 45,
+      "trail_mm": 307.775
+    }
+  ]
+}

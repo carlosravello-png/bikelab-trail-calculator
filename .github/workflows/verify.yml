@@ -1,0 +1,16 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent verifier (Python, standard library)
+        run: python3 verify_trail.py
+      - name: Engine against golden vectors and closed form (Node.js)
+        run: node check_engine.js
