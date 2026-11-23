@@ -2,6 +2,7 @@
 
 [![verify](https://github.com/carlosravello-png/bikelab-trail-calculator/actions/workflows/verify.yml/badge.svg)](https://github.com/carlosravello-png/bikelab-trail-calculator/actions/workflows/verify.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-4fb8c8)](LICENSE.txt)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24477625.svg)](https://doi.org/10.5281/zenodo.24477625)
 
 Bicycle steering geometry from head angle, fork offset and wheel radius: ground trail,
 mechanical trail, wheel flop, the sensitivity of trail to each input, and the change of
@@ -64,3 +65,7 @@ Each prints `N/N checks passed` and exits with code 0.
 
 Engine, vectors and verifiers: [CC BY 4.0](LICENSE.txt). Cite with the metadata in
 [`CITATION.cff`](CITATION.cff); each release is archived on Zenodo with its own DOI.
+
+> Ravello Joo, C. E. (2026). *BikeLab Trail Calculator* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24477626
+
+All versions: DOI [10.5281/zenodo.24477625](https://doi.org/10.5281/zenodo.24477625).
