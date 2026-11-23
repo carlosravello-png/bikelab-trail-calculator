@@ -1,5 +1,7 @@
 # BikeLab Trail Calculator
 
+Designed and maintained by **Carlos Eduardo Ravello Joo** · ORCID [0009-0007-5631-7436](https://orcid.org/0009-0007-5631-7436) · BikeLab Studio, Trujillo, Peru
+
 [![verify](https://github.com/carlosravello-png/bikelab-trail-calculator/actions/workflows/verify.yml/badge.svg)](https://github.com/carlosravello-png/bikelab-trail-calculator/actions/workflows/verify.yml)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-4fb8c8)](LICENSE.txt)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24477625.svg)](https://doi.org/10.5281/zenodo.24477625)
@@ -11,8 +13,6 @@ vectors and two independent verifiers. The green badge above is set by GitHub Ac
 which runs both verifiers on every change.
 
 ![Bicycle steering geometry, reference case drawn to scale](docs/trail-geometry.svg)
-
-**Author:** Carlos Eduardo Ravello Joo · ORCID [0009-0007-5631-7436](https://orcid.org/0009-0007-5631-7436) · BikeLab Studio, Trujillo, Peru
 
 **Live demo:** https://carlosravello-png.github.io/bikelab-trail-calculator/
 **Full calculator** (online since 22 June 2026): [ES](https://www.bikelabstudio.com/articles/calculadora-trail-geometria-es.html) · [EN](https://www.bikelabstudio.com/articles/trail-calculator-en.html) · [PT](https://www.bikelabstudio.com/articles/calculadora-trail-geometria-pt.html)
