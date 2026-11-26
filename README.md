@@ -69,6 +69,6 @@ the author. Versions up to 1.0.0 were released under CC BY 4.0 and keep that lic
 Licence and attribution terms: https://carlosravello.com/licencia-en.html. Cite with the metadata in
 [`CITATION.cff`](CITATION.cff); each release is archived on Zenodo with its own DOI.
 
-> Ravello Joo, C. E. (2026). *BikeLab Trail Calculator* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24477626
+> Ravello Joo, C. E. (2026). *BikeLab Trail Calculator* (Version 1.1.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24549760
 
-All versions: DOI [10.5281/zenodo.24477625](https://doi.org/10.5281/zenodo.24477625).
+All versions: DOI [10.5281/zenodo.24477625](https://doi.org/10.5281/zenodo.24477625). Code of version 1.1.0 archived in Software Heritage: [swh:1:rev:0f3e8b91f00cc60b2f8eb00eb3fdcd6f2cc7bd75](https://archive.softwareheritage.org/swh:1:rev:0f3e8b91f00cc60b2f8eb00eb3fdcd6f2cc7bd75).
