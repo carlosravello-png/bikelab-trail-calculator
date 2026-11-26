@@ -72,5 +72,5 @@ The **licensor** is the individual or entity offering these terms, and the **sof
 
 **Use** means anything you do with the software requiring one of your licenses.
 
-Required Notice: Copyright (c) 2026 Carlos Eduardo Ravello Joo (ORCID 0009-0007-5631-7436), BikeLab Studio (https://bikelabstudio.com)
+Required Notice: Copyright (c) 2026 Carlos Eduardo Ravello Joo · https://carlosravello.com · ORCID 0009-0007-5631-7436 · BikeLab Studio
 Required Notice: BikeLab Trail Calculator. Cite as https://doi.org/10.5281/zenodo.24477625. Licence and attribution terms: https://carlosravello.com/licencia-en.html
