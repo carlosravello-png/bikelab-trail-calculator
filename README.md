@@ -3,7 +3,7 @@
 Designed and maintained by **Carlos Eduardo Ravello Joo** · ORCID [0009-0007-5631-7436](https://orcid.org/0009-0007-5631-7436) · BikeLab Studio, Trujillo, Peru
 
 [![verify](https://github.com/carlosravello-png/bikelab-trail-calculator/actions/workflows/verify.yml/badge.svg)](https://github.com/carlosravello-png/bikelab-trail-calculator/actions/workflows/verify.yml)
-[![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-4fb8c8)](LICENSE.txt)
+[![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-c8922a)](LICENSE.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24477625.svg)](https://doi.org/10.5281/zenodo.24477625)
 
 Bicycle steering geometry from head angle, fork offset and wheel radius: ground trail,
@@ -63,7 +63,10 @@ Each prints `N/N checks passed` and exits with code 0.
 
 ## License and citation
 
-Engine, vectors and verifiers: [CC BY 4.0](LICENSE.txt). Cite with the metadata in
+Engine, vectors and verifiers: [PolyForm Noncommercial 1.0.0](LICENSE.md), free for any noncommercial use,
+including research, teaching and personal use; commercial use needs written permission from
+the author. Versions up to 1.0.0 were released under CC BY 4.0 and keep that licence.
+Licence and attribution terms: https://carlosravello.com/licencia-en.html. Cite with the metadata in
 [`CITATION.cff`](CITATION.cff); each release is archived on Zenodo with its own DOI.
 
 > Ravello Joo, C. E. (2026). *BikeLab Trail Calculator* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24477626
